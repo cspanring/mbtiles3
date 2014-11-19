@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/cspanring/mbtiles3.svg)](https://travis-ci.org/cspanring/mbtiles3)
+
 # mbtiles3
 
 Upload MBTiles as ZXY tile schema to S3.
