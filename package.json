@@ -18,6 +18,11 @@
   "scripts": {
     "test": "mocha test/*.js"
   },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/cspanring/mbtiles3.git"
+  },
+  "homepage": "https://github.com/cspanring/mbtiles3",
   "keywords": [
     "mbtiles",
     "tiles",
