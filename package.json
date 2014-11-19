@@ -1,0 +1,28 @@
+{
+  "name": "mbtiles3",
+  "version": "1.0.0",
+  "description": "Upload MBTiles as ZXY tile schema to S3.",
+  "main": "index.js",
+  "bin": {
+    "mbtiles3": "bin/mbtiles3"
+  },
+  "dependencies": {
+    "aws-sdk": "^2.0.27",
+    "mbtiles": "^0.7.3",
+    "minimist": "^1.1.0"
+  },
+  "devDependencies": {
+    "mocha": "^2.0.1",
+    "should": "^4.3.0"
+  },
+  "scripts": {
+    "test": "mocha test/*.js"
+  },
+  "keywords": [
+    "mbtiles",
+    "tiles",
+    "s3"
+  ],
+  "author": "Christian Spanring <cspanring@sasaki.com>",
+  "license": "MIT"
+}

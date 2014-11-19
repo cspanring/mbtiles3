@@ -1,0 +1,20 @@
+Usage: mbtiles3 [options] mbtiles_file
+
+  Options:
+
+     -b, --bucket [bucket name]       S3 bucket
+     -d, --directory [directory name] Directory in S3 bucket to store tiles in
+     -c, --cache [Cache-Control]      HTTP Cache-Control header for tiles
+     -v, --verbose                    Verbose, show upload log information
+     -h, --help                       Output usage information
+
+  Note:
+
+    * Currently mbtiles3 is only tested with and supports JPEG or PNG tiles.
+    * mbtiles3 uses aws-sdk and expects access credentials to be configured as
+    environment variables. Please consult "http://docs.aws.amazon.com/AWSJavaScriptSDK/guide/node-configuring.html#Credentials_from_Environment_Variables"
+    for configuration details.
+
+  Example:
+
+    mbtiles3 -b bucket.example.com -c "max-age=0, no-cache" -v mytiles.mbtiles
