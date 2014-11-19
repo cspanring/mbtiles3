@@ -1,5 +1,6 @@
 var MBTiles = require('mbtiles'),
     AWS = require('aws-sdk'),
+    path = require('path'),
 
     s3 = new AWS.S3();
 
@@ -22,9 +23,9 @@ function Mbtiles3(opts) {
     throw new Error('Requires mbtiles file and S3 Bucket name.');
   }
 
-  this.mbtiles = options.mbtiles;
+  this.mbtiles = path.resolve(options.mbtiles);
   this.s3Bucket = options.s3Bucket;
-  this.s3Directory = options.s3Directory || this.mbtiles.split('.')[0];
+  this.s3Directory = options.s3Directory || path.basename(this.mbtiles).split('.')[0];
   this.s3CacheControl = options.s3CacheControl || 'max-age=86400, public';
 
   this.fileExtension = {
@@ -39,7 +40,7 @@ function Mbtiles3(opts) {
 
 
 Mbtiles3.prototype.openDb = function(callback) {
-  return new MBTiles(__dirname + '/' + this.mbtiles, function(err, tiles) {
+  return new MBTiles(this.mbtiles, function(err, tiles) {
     if (err) {
       callback(err);
     }
